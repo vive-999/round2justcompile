@@ -24,7 +24,6 @@ def removeproduct():
     if product in products:
         products.pop(product)
         print('You successfully removed a product. Now enter the new choice.')
-        print('-------' * 5)
     else:
         print("Product does not exists.")
         removeproduct()
@@ -34,8 +33,7 @@ def updateproduct():
     if product  in products:
         price = input("Enter new price: ")
         products[product] = price
-        print('You successfully removed a product. Now enter the new choice.')
-        print('-------' *5)
+        print('You successfully updated a product. Now enter the new choice.')
     else:
         print("Product does not exists.")
         updateproduct()
@@ -56,11 +54,11 @@ while True:
     elif choice ==2:
         print("Your choice: Remove Product")
         removeproduct()
-        print('You successfully removed a product. Now enter the new choice.')
+        print("~~~" * 18)
     elif choice ==3:
         print("Your choice: Update Product")
         updateproduct()
-        print('You successfully update  a product. Now enter the new choice.')
+        print("~~~" * 18)
     elif choice==4:
         print("Your choice: View Product")
         print("Your Product in Stock")
