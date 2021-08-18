@@ -1,17 +1,13 @@
 products = {}
-
 print("Enter a new Choice")
 
-
 def showoptions():
-    choice = int(input(
+    options = print(
                    "1 Add Product \n"
                    "2 Remove Product\n"
                    "3 Update Product\n"
                    "4 View Product\n"
-                   "5 Exit \n"
-                   "Your choice -"))
-    return choice
+                   "5 Exit \n")
 
 def addproduct():
     product = str(input("Enter Product Name: "))
@@ -42,11 +38,13 @@ def viewproduct():
     for key,value in products.items():
         print (f"{key}\t\t\t\t\tRs.{value}")
 
-
-
-#Looping starts here
 while True:
-    choice = showoptions()
+    showoptions()
+    try:
+        choice = int(input("Your choice - "))
+    except ValueError:
+        print("Sorry, I didn't understand that.")
+        continue
     if choice ==1:
         print("Your choice: Add Product")
         addproduct()
